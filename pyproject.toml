@@ -6,5 +6,4 @@ dependencies = [
     "fastapi",
     "groq",
     "pydantic",
-    "uvicorn",
 ]
