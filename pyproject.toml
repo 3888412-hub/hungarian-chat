@@ -7,3 +7,5 @@ dependencies = [
     "groq",
     "pydantic",
 ]
+[tool.vercel]
+entrypoint = "app:app"
