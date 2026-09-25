@@ -31,7 +31,7 @@ def chat(req: ChatRequest):
     messages.append({"role": "user", "content": req.message})
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
         messages=messages
     )
     return {"reply": response.choices[0].message.content}...
