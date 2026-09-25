@@ -1,5 +1,4 @@
 import os
-print("KEY CHECK:", bool(os.environ.get("GROQ_API_KEY")))
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
