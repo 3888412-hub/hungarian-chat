@@ -1,11 +1,11 @@
 import os
+print("KEY CHECK:", bool(os.environ.get("GROQ_API_KEY")))
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from groq import Groq
 
 app = FastAPI()
-
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 SYSTEM_PROMPT = """Ты — собеседник на венгерском языке. Уровень пользователя — A2-B1.
@@ -31,7 +31,7 @@ def chat(req: ChatRequest):
     messages.append({"role": "user", "content": req.message})
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
         messages=messages
     )
-    return {"reply": response.choices[0].message.content}
+    return {"reply": response.choices[0].message.content}...
